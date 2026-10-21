@@ -1,0 +1,245 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kika Freixo Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Francisca (Kika) Freixo – Business Analytics student at Maastricht University. Projects in machine learning, optimisation and data analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an analyst's index. Name block, then one row per project led by its headline result in mono. */
+:root{
+  --paper:#F4F6F9; --ink:#141B2D; --muted:#5A6377; --rule:#D9DEE7; --surface:#FFFFFF;
+  --accent:#2B54D9; --accent-soft:#E3E9FC;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-data:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F1422; --ink:#E7EAF2; --muted:#9AA3B8; --rule:#262E42; --surface:#161C2C;
+  --accent:#8EA8FF; --accent-soft:#1E2847; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1422; --ink:#E7EAF2; --muted:#9AA3B8; --rule:#262E42; --surface:#161C2C;
+  --accent:#8EA8FF; --accent-soft:#1E2847; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--f-body);margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-block:56px 72px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.label{font:500 12px/1.2 var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+header{display:grid;gap:20px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+h1{font-size:clamp(40px,7vw,76px);font-weight:700;line-height:1;letter-spacing:-.025em}
+h1 span{color:var(--accent)}
+.lede{font-size:clamp(17px,2.1vw,20px);max-width:58ch;color:var(--ink);margin:0}
+.lede em{font-style:normal;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;font:500 14px var(--f-data)}
+.links a{text-decoration:none;border-bottom:1px solid currentColor}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;font:400 14px var(--f-data);color:var(--muted);margin:0;padding:0;list-style:none}
+.facts b{color:var(--ink);font-weight:500}
+
+/* work */
+section{padding-top:44px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:12px}
+h2{font-size:28px;font-weight:700;letter-spacing:-.01em}
+.filters{display:flex;flex-wrap:wrap;gap:6px}
+.filters button{font:500 13px var(--f-data);color:var(--muted);background:transparent;border:1px solid var(--rule);
+  border-radius:999px;padding:5px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.filters button:hover{border-color:var(--ink)}
+.projects{list-style:none;margin:0;padding:0}
+.proj{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 36px;padding:28px 0;border-top:1px solid var(--rule)}
+.metric{font:500 34px/1 var(--f-data);letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent)}
+.metric small{display:block;font:400 12.5px/1.35 var(--f-body);color:var(--muted);letter-spacing:0;margin-top:8px;max-width:22ch}
+.body{min-width:0;display:grid;gap:10px}
+.meta{font:400 12.5px var(--f-data);color:var(--muted);letter-spacing:.02em}
+h3{font-size:22px;font-weight:700;line-height:1.2}
+.body p{margin:0;max-width:66ch}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 0;padding:0;list-style:none}
+.stack li{font:400 12.5px var(--f-data);background:var(--accent-soft);color:var(--ink);padding:2px 9px;border-radius:4px}
+.acts{display:flex;flex-wrap:wrap;gap:6px 20px;font:500 14px var(--f-body)}
+.acts a{text-decoration:none}
+.acts a:hover{text-decoration:underline}
+.team{color:var(--muted);font-size:14px}
+
+/* toolkit + edu */
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;border-top:1px solid var(--rule);padding-top:24px}
+.cols h3{font-size:15px;font-family:var(--f-data);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cols ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.edu{display:grid;gap:14px;border-top:1px solid var(--rule);padding-top:24px}
+.edu-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4px 36px}
+.edu-row .when{font:400 14px var(--f-data);color:var(--muted)}
+.edu-row p{margin:0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font:400 13px var(--f-data);color:var(--muted)}
+
+@media (max-width:720px){
+  .proj,.edu-row{grid-template-columns:minmax(0,1fr)}
+  .metric{font-size:28px}
+  .metric small{max-width:none}
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .wrap{padding-block:36px 56px}
+}
+@media (prefers-reduced-motion:no-preference){.proj{transition:opacity .2s}}
+</style>
+</head><body>
+
+<div class="wrap">
+  <header>
+    <div class="label">Business Analytics · Maastricht University</div>
+    <h1>Francisca <span>(Kika)</span> Freixo</h1>
+    <p class="lede">I turn messy business data into decisions: anomaly detection for retail fraud, network optimisation for logistics, and models managers can actually read. <em>Python, R and SQL.</em></p>
+    <ul class="facts">
+      <li><b>BSc</b> Business Analytics, Maastricht University</li>
+      <li><b>Autumn 2026</b> exchange semester</li>
+    </ul>
+    <nav class="links" aria-label="Profiles">
+      <a href="https://github.com/kika2006" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head">
+      <h2 id="work-h">Selected work</h2>
+      <div class="filters" role="group" aria-label="Filter by language">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button type="button" id="f-python" data-f="python" aria-pressed="false">Python</button>
+        <button type="button" id="f-r" data-f="r" aria-pressed="false">R</button>
+        <button type="button" id="f-sql" data-f="sql" aria-pressed="false">SQL</button>
+      </div>
+    </div>
+
+    <ol class="projects">
+      <li class="proj" data-tags="python r">
+        <div class="metric">24.6%<small>of annual shrinkage recovered, ≈ €55.5k a year</small></div>
+        <div class="body">
+          <div class="meta">Year 2 · eLab Business Case II · team of 6</div>
+          <h3>Catching what self-checkout misses</h3>
+          <p>Unsupervised fraud detection for a supermarket chain with no fraud labels. Over 100,000 shopping sessions were turned into behavioural features such as scan speed, movement through the store and basket value. They were then scored by an ensemble of 27 Isolation Forests, refined with LOF, PCA and K-Means shopper profiles. The top 150 sessions go to staff for spot-checks.</p>
+          <ul class="stack"><li>Python</li><li>scikit-learn</li><li>Isolation Forest</li><li>LOF</li><li>K-Means</li><li>Plotly</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/self-checkout-fraud-detection" target="_blank" rel="noopener">Code &amp; write-up ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="python">
+        <div class="metric">−41%<small>annual network cost, over €1M saved a year</small></div>
+        <div class="body">
+          <div class="meta">Year 2 · eLab Business Case II · team of 6</div>
+          <h3>Optimising a parcel network's last mile</h3>
+          <p>Which of Maastricht's 35 parcel service points should stay, move or close, and where should automated lockers go? The project combines a demand model, a pickup-behaviour regression, road distances from Dijkstra, a p-median MILP and simulated annealing. The recommended network has 11 service points and 4 lockers, keeps a 63.8% pickup rate and held up under sensitivity tests.</p>
+          <ul class="stack"><li>Python</li><li>PuLP (MILP)</li><li>Simulated annealing</li><li>SciPy</li><li>statsmodels</li><li>Folium</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/parcel-network-optimisation" target="_blank" rel="noopener">Code &amp; write-up ↗</a><a href="maps/parcel_baseline.html" target="_blank" rel="noopener">Interactive map ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="python">
+        <div class="metric">€9,400<small>validated daily profit, above the reference solution</small></div>
+        <div class="body">
+          <div class="meta">Year 2 · Modeling &amp; Computing</div>
+          <h3>Scheduling 20 consultants with simulated annealing</h3>
+          <p>A profit-maximising routing and scheduling problem with about 1,000 orders, 8-hour shifts and qualification constraints. It is solved with greedy construction, six local-search operators, incremental cost evaluation and time-based cooling, all in plain Python.</p>
+          <ul class="stack"><li>Python</li><li>Metaheuristics</li><li>Vehicle routing</li><li>Complexity analysis</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/consultant-scheduling-simulated-annealing" target="_blank" rel="noopener">Code &amp; method ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="sql">
+        <div class="metric">11 tables<small>normalised schema with sample data and queries</small></div>
+        <div class="body">
+          <div class="meta">Year 2 · Database Management · team of 3</div>
+          <h3>Food-delivery platform database</h3>
+          <p>A MySQL database for a Thuisbezorgd-style platform covering customers, restaurants, menus, couriers, orders, invoices, payments and reviews. It uses foreign keys, ENUM and CHECK constraints, plus analytical queries such as a restaurant performance report and a customer anti-join.</p>
+          <ul class="stack"><li>SQL</li><li>MySQL 8</li><li>ER modelling</li><li>Normalisation</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/food-delivery-database" target="_blank" rel="noopener">Schema &amp; ER diagram ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="r">
+        <div class="metric">0 ML libraries<small>Naive Bayes and a neural network written by hand</small></div>
+        <div class="body">
+          <div class="meta">Year 2 · Machine Learning · group assignment</div>
+          <h3>Is this water safe to drink?</h3>
+          <p>Predicting water potability from 9 chemical measurements with a Gaussian Naive Bayes classifier and a multi-layer perceptron, both implemented from scratch in base R. The work covers leakage-free imputation, backpropagation, the loss curve and an analysis of false positives, which are the costly error here.</p>
+          <ul class="stack"><li>R</li><li>Naive Bayes</li><li>Neural networks</li><li>Gradient descent</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/water-potability-classifiers" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="r">
+        <div class="metric">κ = 0.5<small>best out-of-sample Sharpe ratio (0.060)</small></div>
+        <div class="body">
+          <div class="meta">Year 1 · eLab Business Case · team of 4</div>
+          <h3>Building better stock portfolios</h3>
+          <p>Mean-variance portfolios built and back-tested on real stock data with odd/even cross-validation. Blending sample means with CAPM-implied returns beat both pure approaches out-of-sample.</p>
+          <ul class="stack"><li>R</li><li>quadprog</li><li>quantmod</li><li>CAPM</li><li>R Markdown</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/portfolio-optimisation-capm" target="_blank" rel="noopener">Code ↗</a><a href="reports/optimal_portfolios.html" target="_blank" rel="noopener">Full report ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="r">
+        <div class="metric">80.2%<small>accuracy of the pruned decision tree</small></div>
+        <div class="body">
+          <div class="meta">Year 1 · Knowledge Discovery &amp; Data Visualisation · pair project</div>
+          <h3>Absenteeism at work: from exploration to prediction</h3>
+          <p>Outlier analysis, violin plots and correlation heatmaps of what drives hours missed, followed by a comparison of k-NN, decision trees and logistic regression to predict long absences. The pruned tree was recommended for being both accurate and easy to explain.</p>
+          <ul class="stack"><li>R</li><li>ggplot2</li><li>caret</li><li>rpart</li><li>k-NN</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/absenteeism-analysis" target="_blank" rel="noopener">Code ↗</a><a href="reports/absenteeism_eda.html" target="_blank" rel="noopener">EDA report ↗</a><a href="reports/absenteeism_models.html" target="_blank" rel="noopener">Modelling report ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="r">
+        <div class="metric">€3.49–3.99<small>optimal price for the most valuable segment</small></div>
+        <div class="body">
+          <div class="meta">Year 1 · Marketing &amp; Business Analytics · pair project</div>
+          <h3>Pricing a new protein drink</h3>
+          <p>We designed and ran our own Qualtrics survey, then clustered respondents into three segments and estimated each segment's demand curve with the Gabor-Granger method to set a price strategy for each.</p>
+          <ul class="stack"><li>R</li><li>Clustering</li><li>Pricing research</li><li>Survey design</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/protein-drink-segmentation-pricing" target="_blank" rel="noopener">Code &amp; findings ↗</a></div>
+        </div>
+      </li>
+
+      <li class="proj" data-tags="r">
+        <div class="metric">R² 0.92<small>multiple regression on about 54,000 diamonds</small></div>
+        <div class="body">
+          <div class="meta">Year 1 · Mathematics &amp; Statistics 2 · individual</div>
+          <h3>What drives diamond prices?</h3>
+          <p>EDA, ANOVA across cut, colour and clarity, and simple, full and reduced regression models with assumption checks, ending in pricing recommendations for sellers.</p>
+          <ul class="stack"><li>R</li><li>ANOVA</li><li>Linear regression</li><li>ggplot2</li></ul>
+          <div class="acts"><a href="https://github.com/kika2006/diamond-price-analysis" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="tools-h">
+    <h2 id="tools-h" style="margin-bottom:16px">Toolkit</h2>
+    <div class="cols">
+      <div><h3>Languages</h3><ul><li>Python (pandas, NumPy, scikit-learn)</li><li>R (tidyverse, ggplot2, caret)</li><li>SQL (MySQL)</li></ul></div>
+      <div><h3>Methods</h3><ul><li>Anomaly detection and clustering</li><li>Classification and regression</li><li>Optimisation (MILP, metaheuristics)</li><li>Statistical testing</li></ul></div>
+      <div><h3>Business</h3><ul><li>Pricing and segmentation</li><li>Business cases and ROI</li><li>Data ethics and GDPR</li><li>Presenting to stakeholders</li></ul></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="edu-h">
+    <h2 id="edu-h" style="margin-bottom:16px">Education</h2>
+    <div class="edu">
+      <div class="edu-row"><div class="when">2024 – present</div><p><b>BSc Business Analytics</b>, Maastricht University School of Business and Economics</p></div>
+      <div class="edu-row"><div class="when">Autumn 2026</div><p><b>Exchange semester</b>: Business Process Analytics, Technology &amp; Innovation Management, Strategic Brand Management</p></div>
+    </div>
+  </section>
+
+  <footer>All projects are university coursework; datasets supplied by the course are not redistributed. Built with plain HTML and CSS.</footer>
+</div>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button'), rows=document.querySelectorAll('.proj');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    btns.forEach(function(x){x.setAttribute('aria-pressed', x===b?'true':'false')});
+    rows.forEach(function(r){r.hidden = !(f==='all' || r.getAttribute('data-tags').split(' ').indexOf(f)>-1)});
+  })});
+})();
+</script>
+</body></html>
